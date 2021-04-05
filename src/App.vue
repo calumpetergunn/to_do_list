@@ -6,13 +6,17 @@
       </li>
     </ul>
 
-    <form v-on:submit.prevent="saveNewTask">
+    <form class="form" v-on:submit.prevent="saveNewTask">
       <label for="new-task">Add a New Task:</label>
       <input type="text" id="new-task" v-model="newTask" required>
-      <input type="radio" id="high-priority" name="new-priority" value="high" v-model="newPriority" required>
-      <label for="high-priority">High Priority</label>
-      <input type="radio" id="low-priority" name="new-priority" value="low" v-model="newPriority">
-      <label for="low-priority">Low Priority</label>
+      <span>
+        <input type="radio" id="high-priority" name="new-priority" value="high" v-model="newPriority" required>
+        <label for="high-priority">High Priority</label>
+      </span>
+      <span>
+        <input type="radio" id="low-priority" name="new-priority" value="low" v-model="newPriority">
+        <label for="low-priority">Low Priority</label>
+      </span>
       <input type="submit" value="Add Task">
     </form>
   </div>
@@ -61,6 +65,36 @@ export default {
 
 .low {
   color: green;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  background-color: blanchedalmond;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.body {
+  background-color: cornflowerblue;
+}
+
+.form > input, .form label {
+  width: 15%;
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+}
+
+#app > ul > li{
+  list-style: none;
+  background-color: whitesmoke;
+  text-align: center;
+  width: 25%;
+}
+
+ul {
+  background-color: rgb(171, 209, 222);
+  border-radius: 15px;
 }
 
 </style>
